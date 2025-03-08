@@ -4,10 +4,6 @@ import java.util.ArrayList;
 
 //Třída sloužící k logickým operacím týkající se seznamu pojištěných
 public class Evidence {
-    String jmeno;
-    String prijmeni;
-    String telefonniCislo;
-    int vek;
 
     public Evidence() {
     }
@@ -34,25 +30,23 @@ public class Evidence {
 
     //Metoda pro zjištění prázdného seznamu
     public boolean jeSeznamPrazdny() {
-        if (seznam.isEmpty()) {
-            return true;
-        }
-        return false;
+        return seznam.isEmpty();
     }
 
     //Metoda pro vyhledání pojištěnce
     public void vyhledejPojistence(String jmeno, String prijmeni) {
-        Pojistenec nalez = null; //Do této proměnné se ukládá případný nález v seznamu
-
+        ArrayList<Pojistenec> seznamNalezu = new ArrayList<>();
             for (Pojistenec p : seznam) {
                 if (jmeno.equals(p.getJmeno()) && prijmeni.equals(p.getPrijmeni())) {
-                    nalez = p; //Přiřazení jména a příjmení do proměnné
+                    seznamNalezu.add(p); //Přiřazení jména a příjmení do proměnné
                 }
             }
-            if (nalez == null) {
+            if (seznamNalezu.isEmpty()) {
                 System.out.println("Pojištěnec nebyl nalezen.");
             } else {
-                System.out.println(nalez);
+                for (Pojistenec p : seznamNalezu) {
+                    System.out.println(p);
+                }
             }
         }
     }
