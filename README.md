@@ -1,5 +1,4 @@
-# evidence_pojisteni_zjednodusene
-Evidence pojištěných
+# Evidence pojištěných
 
 Tento projekt je jednoduchá aplikace pro evidenci pojištěných osob v jazyce Java.
 
